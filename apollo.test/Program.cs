@@ -18,19 +18,19 @@ namespace apollo.test
     {
         public static void Main(string[] args)
         {
-            Com.Ctrip.Framework.Apollo.Logging.LogManager.UseConsoleLogging(Com.Ctrip.Framework.Apollo.Logging.LogLevel.Trace);
+       
             //Com.Ctrip.Framework.Apollo.Logging.LogManager.Provider = new ConsoleLoggerProvider(Com.Ctrip.Framework.Apollo.Logging.LogLevel.Trace);
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, builder) =>
-                {
-                    builder
-                    .AddApollo(builder.Build().GetSection("apollo"))
-                    .AddDefault();
-                })
+                //.ConfigureAppConfiguration((hostingContext, builder) =>
+                //{
+                //    builder
+                //    .AddApollo(builder.Build().GetSection("apollo"))
+                //    .AddDefault();
+                //})
                 .UseStartup<Startup>()
                 .Build();
     }

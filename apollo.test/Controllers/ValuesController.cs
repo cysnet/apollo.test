@@ -19,7 +19,7 @@ namespace apollo.test.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] {  _configuration["env"] };
+            return new string[] {  _configuration["cos"] };
         }
     }
 }
